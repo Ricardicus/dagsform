@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<body>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+<style>
+
+body {
+	font-size: 60px;
+	width: 100%;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+</style>
+</head>
+<script src="scripts/jquery.js"></script>
+<script type="text/javascript">
+
+var timeout = 5; // How long until you can vote again
+
+function vote(value) {
+	$.ajax( {
+		url: "vote.cgi?value=" + value,
+		type: "GET",
+		success: function() {
+			$("#info").html("Ditt svar har registrerats!");
+			$("#vote").hide();
+			$("#ok-sign").show();
+			setTimeout(function() {
+				location.reload();
+			}, 5000);
+		},
+		error: function() {
+			alert("Servern verkar inte svara! Fråga integratören vad det är frågan om.");
+		}
+	}
+	);
+
+}
+
+function add_handlers() {
+	$(".overout")
+	.unbind("mouseover")
+	.unbind("mouseleave")
+	.mouseover(
+		function(){
+			$(this).fadeTo(100, 0.5);
+		}
+	)
+	.mouseleave( 
+		function(){
+			$(this).fadeTo(100,1.0);
+		}
+	);
+
+	$("img").click(function(){
+		vote($(this).attr("value"));
+	});
+
+}
+window.onload = function(e) {
+	/*
+	* TODO: Stuff
+	*/
+
+      $("img").each(function(i){
+      	$(this).addClass("overout");
+      })
+
+      add_handlers();
+
+}
+
+</script>
+
+
+<center>
+
+<p id="info">Hur var din dag idag?</p>
+
+<div>
+<table id="vote">
+	<tr>
+	<td><img src="img/smiley_sad.png"        value="0" alt="Sad face" height="126" width="162"></td>
+	<td><img src="img/smiley_mad.png"        value="1" alt="Not good face" height="126" width="135"></td>
+	<!--<td><img src="img/smiley_neutral.png"    value="2" alt="Neutral face" height="126" width="147"></td>-->
+	<td><img src="img/smiley_lighthappy.png" value="2" alt="Happy face" height="126" width="150"></td>
+	<td><img src="img/smiley_happy.png"      value="3" alt="Super happy face" height="126" width="144"></td>
+	</tr>
+</table>
+<img id="ok-sign" style="display:none;" src="img/ok_sign.jpg" alt="Neutral face" height="126" width="147">
+</div>
+
+</center>
+</div>
+</body>
+</html>
