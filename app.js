@@ -203,11 +203,11 @@ const server = http.createServer((req, res) => {
 				        } else {
 							// Resultat registrerat
 							ok(res);
+
+							fixaveckostatistik();
 				        }
 					}
 				);
-
-				fixaveckostatistik();
 
 			} else {
 				not_found(res);
