@@ -1,14 +1,21 @@
-# Install
+# Installera
 
-Get node.js
+Skaffa node.js
 
-# Configure
+# Konfigurera så det passar
 
-Set host and port in app.js to what suits you.
+Sätt host and port variablerna in app.js till vad som passa.
 
-# Run
+# Kör
 
 <pre>
 node app.js
 </pre>
+
+Öppna en browser och tryck in addressen.
+
+# Varning
+
+Alla filer som finns i den mappen kommer vara åtkomlig.
+
 
