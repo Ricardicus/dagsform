@@ -4,7 +4,7 @@ Skaffa node.js
 
 # Konfigurera så det passar
 
-Sätt host and port variablerna in app.js till vad som passa.
+Sätt host and port variablerna in app.js till vad som passar.
 
 # Kör
 
