@@ -2,7 +2,7 @@
 
 Skaffa node.js
 
-# Konfigurera så det passar
+# Konfigurera
 
 Sätt host and port variablerna in app.js till vad som passar.
 
