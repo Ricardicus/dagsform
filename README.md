@@ -16,6 +16,6 @@ node app.js
 
 # Varning
 
-Alla filer som finns i den mappen kommer vara åtkomlig.
+Alla filer som finns i den mappen kommer vara åtkomliga.
 
 
