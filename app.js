@@ -116,7 +116,7 @@ function fixaveckostatistik () {
 
 			}
 
-			fs.writeFile(week_stats_file, data, 'utf8');
+			fs.writeFile(week_stats_file, data, 'utf8', function() {});
 
 		}
 
