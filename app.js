@@ -189,25 +189,30 @@ const server = http.createServer((req, res) => {
 					value = 0;
 				}
 
-				var year = d.getFullYear();
-				var month = d.getMonth();
-				var day = d.getDate();
+				if ( !isNaN(value) ) {
 
-				var data = year + "-" + month + "-" + day + "," + value + "\n";
+					var year = d.getFullYear();
+					var month = d.getMonth();
+					var day = d.getDate();
 
-				fs.appendFile(votes_file, data, 'utf8',
-				    // callback function
-				    function(err) { 
-				        if (err) {
-				        	not_found(res);
-				        } else {
-							// Resultat registrerat
-							ok(res);
+					var data = year + "-" + month + "-" + day + "," + value + "\n";
 
-							fixaveckostatistik();
-				        }
-					}
-				);
+					fs.appendFile(votes_file, data, 'utf8',
+					    // callback function
+					    function(err) { 
+					        if (err) {
+					        	not_found(res);
+					        } else {
+								// Resultat registrerat
+								ok(res);
+
+								fixaveckostatistik();
+					        }
+						}
+					);
+
+				}
+
 
 			} else {
 				not_found(res);

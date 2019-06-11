@@ -13,6 +13,11 @@ body {
 	font-family: 'Open Sans Condensed', sans-serif;
 }
 
+td {
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
 </style>
 </head>
 <script src="scripts/jquery.js"></script>
@@ -30,7 +35,7 @@ function vote(value) {
 			$("#ok-sign").show();
 			setTimeout(function() {
 				location.reload();
-			}, 5000);
+			}, 2000);
 		},
 		error: function() {
 			alert("Servern verkar inte svara! Fråga integratören vad det är frågan om.");
@@ -83,11 +88,12 @@ window.onload = function(e) {
 <div>
 <table id="vote">
 	<tr>
-	<td><img src="img/smiley_sad.png"        value="0" alt="Sad face" height="126" width="162"></td>
-	<td><img src="img/smiley_mad.png"        value="1" alt="Not good face" height="126" width="135"></td>
-	<!--<td><img src="img/smiley_neutral.png"    value="2" alt="Neutral face" height="126" width="147"></td>-->
-	<td><img src="img/smiley_lighthappy.png" value="2" alt="Happy face" height="126" width="150"></td>
-	<td><img src="img/smiley_happy.png"      value="3" alt="Super happy face" height="126" width="144"></td>
+	<td><img src="img/survey1.png"        value="0" alt="Sad face" height="200" width="162"></td>
+	<td><img src="img/survey2.png"        value="1" alt="Not good face" height="200" width="130"></td>
+	<td><img src="img/survey3.png"        value="2" alt="Neutral negative face" height="200" width="160"></td>
+	<td><img src="img/survey4.png"        value="3" alt="Neutral positive face" height="200" width="150"></td>
+	<td><img src="img/survey5.png"        value="4" alt="Happy face" height="200" width="144"></td>
+	<td><img src="img/survey6.png"        value="5" alt="Super happy face" height="200" width="144"></td>
 	</tr>
 </table>
 <img id="ok-sign" style="display:none;" src="img/ok_sign.jpg" alt="Neutral face" height="126" width="147">
