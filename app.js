@@ -181,15 +181,13 @@ const server = http.createServer((req, res) => {
 
 				var d = new Date();
 				var value = parseInt(url.split("=")[1]);
+				var valueIsValid = true;
 
 				// If someone is messing with the site..
-				if ( value > 5 ) {
-					value = 4;
-				} else if ( value < 0 ) {
-					value = 0;
-				}
+				if ( value > 5 || value < 0 || isNaN(value) )
+					valueIsValid = false;
 
-				if ( !isNaN(value) ) {
+				if ( valueIsValid ) {
 
 					var year = d.getFullYear();
 					var month = d.getMonth();
@@ -211,6 +209,8 @@ const server = http.createServer((req, res) => {
 						}
 					);
 
+				} else {
+					not_found(res);
 				}
 
 
