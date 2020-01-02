@@ -1,0 +1,13 @@
+{
+  "name": "dagsform",
+  "version": "1.0.0",
+  "description": "Simple app for voting on how the day was.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js" 
+  },
+  "repository": "https://github.com/Ricardicus/dagsform",
+  "author": "Rickard",
+  "license": "UNLICENSED"
+}

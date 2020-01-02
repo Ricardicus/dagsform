@@ -6,7 +6,7 @@ const http = require('http');
 var fs = require('fs');
 
 // Change to what is preferred. Im just running locally!
-const hostname = '127.0.0.1';
+const hostname = '0.0.0.0';
 const port = 8080;
 
 // votes file
